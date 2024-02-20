@@ -1,0 +1,102 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Log in page</title>
+    <!-- <link rel="stylesheet" href="./css/bootstrap.css"> -->
+    <link rel="stylesheet" href="./css/login signin.css">
+    <link rel="stylesheet" href="./css/all.min.css">
+    <link rel="stylesheet" href="./css/normalize.css">
+</head>
+<body>
+    <!-- start header -->
+    <section class="header" id="header">
+        <nav>
+            <div class="logo">
+                <span>Movies World</span>
+            </div>
+            <div class="links">
+                <ul>
+                    <li><a href="index.html">Home</a></li>
+                    <li><a href="movies.html">Movies</a></li>
+                    <li><a href="">Series</a></li>
+                    <li><a href="">News</a></li>
+                </ul>
+            </div>
+            <div class="i-signin">
+                <div class="icon">
+                    <i class="fas fa-search" id="search"></i>
+                    <i class="fas fa-times" id="timesheader"></i>
+                    <!-- <i class="fas fa-times" id="times"></i> -->
+                </div>
+                <div class="sign-in">
+                    <button><a href="login signin.html">Sign in</a></button>
+                </div>
+
+            </div>
+            <div class="icon-screen">
+                <i class="fas fa-bars" id="bars"></i>
+                <i class="fas fa-times" id="times"></i>
+            </div>
+        </nav>
+        <div class="search-bar" id="search-bar">
+            <i class="fas fa-search" id="search"></i>
+            <input type="search" class="searchbar" placeholder="click to search">
+        </div>
+    </section>
+    <div class="links-column" id="links-column">
+        <ul>
+            <li class="search"><i class="fas fa-search"></i><input type="search" class="searchbar" placeholder="click to search"></li>
+            <li><a href="index.html">Home</a></li>
+            <li><a href="movies.html">Movies</a></li>
+            <li><a href="">Series</a></li>
+            <li><a href="">News</a></li>
+        </ul>
+    </div>
+    <!-- end header -->
+    
+    <div class="bb">
+        <div class="container">
+          <div class="log-in" id="log-in">
+            <form action="">
+              <span>Log in</span>
+              <input type="email" id="email"  required placeholder="Input Email">
+              <input type="password" id="password"maxlength="20" minlength="8" required placeholder="Input password">
+              <i class="fas fa-eye" id="showpass"></i>
+              <i class="fas fa-eye" id="not-eye"></i>
+              <div class="checked">
+              <input type="checkbox"> <span>Remamber me</span>
+              </div>
+              <button id="aRegister"> Register </button>
+              <div class="buttons">
+                <button type="submit">Log in</button>
+                <button>Cancle</button>
+                
+              </div>
+            </form>
+          </div>
+          <div class="register" id="register">
+            <form action="">
+              <span>Register</span>
+              <input type="text" id="name" placeholder="input full name">
+              <input type="text" id="sname" required placeholder="Input code name">
+              <input type="password" id="pass" maxlength="12" minlength="8" required placeholder="Input password">
+              <i class="fas fa-eye" id="eye"></i>
+              <i class="fas fa-eye" id="not-eye"></i>
+              <div class="checked">
+                <input type="checkbox"> <span>Remamber me</span>
+              </div>
+              <button id="alog"> log in </button>
+              <div class="buttons">
+                <button type="submit">Register</button>
+                <button>Cancle</button>
+              </div>
+            </form>
+          </div>
+        </div>
+      </div>
+      <script src="./js/login signin.js"></script>
+</body>
+</html>

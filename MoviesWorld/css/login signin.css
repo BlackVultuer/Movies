@@ -1,0 +1,473 @@
+@import url('https://fonts.googleapis.com/css?family=Poppins:400,500,600,700&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Roboto:wght@100;300&display=swap');
+
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    scroll-behavior: smooth;
+    list-style-type: none;
+    text-decoration: none;
+    /* font-family: 'Poppins', sans-serif; */
+    font-family: 'Roboto', sans-serif;
+    transition: .3s;
+}
+
+body {
+    background-color: #060606;
+}
+.icon-screen{
+    display:  none ;
+}
+#scroll-top {
+    display: block;
+    visibility: hidden;
+    z-index: 8;
+    opacity: 0;
+    transition: visibility 0s, opacity 0.5s ease-in;
+    position: fixed;
+    bottom: 20px;
+    right: 20px;
+    background: rgba(167, 10, 10, 0.4);
+    border-radius: 20%;
+}
+
+.top-button {
+    text-decoration: none;
+    cursor: pointer;
+    padding: 20px;
+    color: #fafafa;
+}
+
+#scroll-top i {
+    color: #fafafa;
+    padding: 10px;
+    font-size: 24px;
+}
+
+/*start header*/
+.header {
+    width: 100%;
+    height: 70px;
+    position: fixed;
+    z-index: 6;
+    top: 0;
+    transition: .3s;
+}
+.back-header {
+    background-color: hsla(60, 3%, 7%, 0.75);
+}
+.header nav {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    justify-content: space-around;
+    position: relative;
+    top: 10px;
+}
+
+.header nav .logo {
+    margin: 5px;
+}
+
+.header nav .logo span {
+    font-size: 18px;
+    font-weight: bold;
+    font-style: italic;
+    color: white;
+}
+
+.header nav .links {
+    position: relative;
+}
+
+.header nav .links ul {
+    display: flex;
+    justify-content: space-between;
+}
+
+.header nav .links ul li {
+    margin: 5px;
+}
+
+.header nav .links ul li a {
+    padding: 20px;
+    color: white;
+    position: relative;
+    transition: .3s;
+}
+
+.header nav .links ul li a:hover {
+    color: red;
+}
+
+.header nav .links ul li a::before {
+    content: '';
+    position: absolute;
+    background-color: red;
+    width: 0px;
+    height: 1px;
+    top: 45px;
+    transition: .3s;
+}
+
+.header nav .links ul li a:hover::before {
+    width: 50px;
+}
+
+.header nav .i-signin {
+    width: 20%;
+    display: flex;
+    justify-content: space-between;
+}
+
+.header nav .i-signin .icon {
+    margin: 5px;
+}
+
+.header nav .i-signin .icon .fa-search {
+    font-size: 20px;
+    cursor: pointer;
+    transition: .5s;
+    padding: 10px;
+    color: white;
+}
+
+.header nav .i-signin .icon .fa-times {
+    font-size: 20px;
+    cursor: pointer;
+    transition: .5s;
+    padding: 10px;
+    color: white;
+    visibility: hidden;
+    opacity: 0;
+}
+
+.header nav .i-signin button {
+    margin: 10px 5px;
+    padding: 5px 12px;
+    border: none;
+    outline: none;
+    background-color: red;
+    color: white;
+    border-radius: 3px;
+    cursor: pointer;
+    transition: .5s;
+    display: inline;
+}
+
+.header nav .i-signin button:hover {
+    background-color: white;
+    color: red;
+}
+.header nav .i-signin button a{
+    font-weight: bold;
+    color: white;
+}
+.header nav .icon-screen {
+    display: flex;
+    margin: 15px 5px;
+}
+
+.header nav .icon-screen i {
+    font-size: 20px;
+    color: white;
+    cursor: pointer;
+    display: none;
+}
+#bars{
+    visibility: hidden;
+}
+
+@media (max-width:850px) {
+    .header nav .icon-screen .fa-bars {
+        display: block;
+        
+    }
+    #bars{
+        visibility: visible;
+    }
+
+    .header nav {
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        justify-content: space-between;
+        position: relative;
+        top: 10px;
+        padding: 0px 10px;
+    }
+
+    .header nav .links {
+        display: none;
+    }
+
+    .header nav .i-signin {
+        display: none;
+    }
+}
+
+.header .search-bar {
+    transition: .3s;
+    visibility: hidden;
+    opacity: 0;
+    position: relative;
+    top: -10px;
+    left: 50%;
+    width: 300px;
+}
+
+.header .search-bar i {
+    position: relative;
+    color: red;
+    margin: 5px;
+    padding: 5px;
+    top: 34px;
+    left: 16em;
+    cursor: pointer;
+    border-left: 1px solid red;
+    transition: .3s;
+}
+
+.header .search-bar input {
+    width: 100%;
+    padding: 5px 10px;
+    padding-right: 40px;
+    border: 2px solid red;
+    outline: none;
+    background-color: rgba(243, 236, 236, 0.986);
+    font-weight: bold;
+    border-radius: 20px;
+    direction: rtl;
+}
+
+.v {
+    visibility: visible;
+    opacity: 1;
+}
+.links-column {
+    position: fixed;
+    z-index: 8;
+    width: 100%;
+    visibility: hidden;
+    opacity: 0;
+    background-color: hsla(60, 3%, 7%, 0.75);
+    padding: 0px;
+    top: 70px;
+    direction: rtl;
+    transition: .3s;
+}
+
+.links-column ul {
+    display: flex;
+    flex-direction: column;
+}
+
+.links-column ul .search {
+    border-bottom: 1px solid red;
+    padding: 0px;
+}
+
+.links-column ul input {
+    width: 100%;
+    padding: 5px 10px;
+    padding-right: 40px;
+    border: 2px solid red;
+    outline: none;
+    background-color: rgba(243, 236, 236, 0.986);
+    font-weight: bold;
+    direction: rtl;
+    cursor: pointer;
+}
+
+.links-column ul li i {
+    color: red;
+    margin: 5px;
+    padding: 5px;
+    position: relative;
+    top: 34px;
+    cursor: pointer;
+    border-left: 1px solid red;
+}
+
+.links-column ul li {
+    border-bottom: 1px solid red;
+    padding: 10px;
+}
+
+.links-column li a {
+    padding: 20px;
+    color: white;
+    position: relative;
+    transition: .3s;
+}
+
+.links-column li a:hover {
+    color: red;
+}
+/*end header*/
+.bb{
+    width: 100%;
+  }
+  .bb .container{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+  }
+  .bb .container .log-in{
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%,-50%);
+    width: 300px;
+    background-color: #060606;
+    border: 2px solid red;
+    padding: 20px;
+    transition: .5s;
+    visibility: hidden;
+    opacity: 0;
+  }
+  .bb .container .log-in form{
+    display: flex;
+    flex-direction: column;
+    gap: 20px;
+  }
+  .bb .container .log-in form span{
+    padding: 10px;
+    font-size: 18px;
+      color: red;
+      font-weight: bold;
+  }
+  .bb .container .log-in form input{
+    border: none;
+    outline: none;
+    border-bottom: .5px solid red;
+    padding: 10px;
+    font-size: 16px;
+    cursor: pointer;
+    background: transparent;
+    color: #FAFAFA;
+  }
+  .bb .container .log-in form input::placeholder{
+    color: #FAFAFA;
+  }
+  .bb .container .log-in span{
+    font-size: 18px;
+  }
+  .bb .container .log-in form #aRegister{
+    background: none;
+      border: none;
+      outline: none;
+      cursor: pointer;
+      color: red;
+      position: relative;
+      left: -98px;
+      font-weight: bold;
+  }
+  .bb .container .log-in .buttons{
+    display: flex;
+    justify-content: space-between;
+  }
+  .bb .container .log-in .buttons button{
+    padding: 10px 15px;
+    border: none;
+    outline: none;
+    border-radius: 5px;
+    cursor: pointer;
+    transition: .5s;
+    font-size: 16px;
+    font-weight: bold;
+    background-color: red;
+    color: #FAFAFA;
+  }
+  .bb .container .log-in .buttons button:hover{
+    background-color: #FAFAFA;
+    color: red;
+  }
+  .fa-eye{
+    color: white;
+    position: relative;
+    cursor: pointer;
+  }
+  /*start register*/
+  
+  .bb .container .register {
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    width: 350px;
+    background-color: #060606;
+    padding: 20px;
+    border: solid 2px red;
+    /* box-shadow: 0px 2px 8px 2px #777; */
+  }
+  .bb .container .register form {
+    display: flex;
+    flex-direction: column;
+    gap: 20px;
+  }
+  .bb .container .register form span {
+    padding: 10px;
+    font-size: 22px;
+    color: red;
+    font-weight: bold;
+  }
+  
+  .bb .container .register form input {
+    background: transparent;
+    border: none;
+    outline: none;
+    border-bottom: .5px solid red;
+    padding: 10px;
+    font-size: 16px;
+    cursor: pointer;
+    color: #FAFAFA;
+  }
+  .bb .container .register form input::placeholder{
+    color: #FAFAFA;
+  }
+  #not-eye {
+    display: none;
+    color: red;
+  }
+  .bb .container .register span {
+    font-size: 18px;
+  }
+  
+  .bb .container .register form #alog {
+      background: none;
+        border: none;
+        outline: none;
+        cursor: pointer;
+        color: red;
+        position: relative;
+        left: -135px;
+        font-size: 16px;
+        font-weight: bold;
+  }
+  
+  .bb .container .register .buttons {
+    display: flex;
+    justify-content: space-between;
+  }
+  
+  .bb .container .register .buttons button {
+    padding: 10px 15px;
+    outline: none;
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+    transition: .5s;
+    font-size: 16px;
+    font-weight: bold;
+    color: #FAFAFA;
+    background-color: red;
+  }
+  .bb .container .register .buttons button:hover{
+    color: red;
+    background-color: #FAFAFA;
+  }
+  
+  
+  

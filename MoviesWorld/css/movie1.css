@@ -1,0 +1,291 @@
+@import url('https://fonts.googleapis.com/css?family=Poppins:400,500,600,700&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Roboto:wght@100;300&display=swap');
+
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    scroll-behavior: smooth;
+    list-style-type: none;
+    text-decoration: none;
+    /* font-family: 'Poppins', sans-serif; */
+    font-family: 'Roboto', sans-serif;
+    transition: .3s;
+}
+
+body {
+    background-color: #060606;
+}
+
+#scroll-top {
+    display: block;
+    visibility: hidden;
+    z-index: 8;
+    opacity: 0;
+    transition: visibility 0s, opacity 0.5s ease-in;
+    position: fixed;
+    bottom: 20px;
+    right: 20px;
+    background: rgba(167, 10, 10, 0.4);
+    border-radius: 20%;
+}
+
+.top-button {
+    text-decoration: none;
+    cursor: pointer;
+    padding: 20px;
+    color: #fafafa;
+}
+
+#scroll-top i {
+    color: #fafafa;
+    padding: 10px;
+    font-size: 24px;
+}
+
+/*start header*/
+.header {
+    width: 100%;
+    height: 70px;
+    position: fixed;
+    z-index: 6;
+    top: 0;
+    transition: .3s;
+}
+
+.back-header {
+    background-color: hsla(60, 3%, 7%, 0.75);
+}
+
+.header nav {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    justify-content: space-around;
+    position: relative;
+    top: 10px;
+}
+
+.header nav .logo {
+    margin: 5px;
+}
+
+.header nav .logo span {
+    font-size: 18px;
+    font-weight: bold;
+    font-style: italic;
+    color: white;
+}
+
+.header nav .links {
+    position: relative;
+}
+
+.header nav .links ul {
+    display: flex;
+    justify-content: space-between;
+}
+
+.header nav .links ul li {
+    margin: 5px;
+}
+
+.header nav .links ul li a {
+    padding: 20px;
+    color: white;
+    position: relative;
+    transition: .3s;
+}
+
+.header nav .links ul li a:hover {
+    color: red;
+}
+
+.header nav .links ul li a::before {
+    content: '';
+    position: absolute;
+    background-color: red;
+    width: 0px;
+    height: 1px;
+    top: 45px;
+    transition: .3s;
+}
+
+.header nav .links ul li a:hover::before {
+    width: 50px;
+}
+
+.header nav .i-signin {
+    width: 20%;
+    display: flex;
+    justify-content: space-between;
+}
+
+.header nav .i-signin .icon {
+    margin: 5px;
+}
+
+.header nav .i-signin .icon .fa-search {
+    font-size: 20px;
+    cursor: pointer;
+    transition: .5s;
+    padding: 10px;
+    color: white;
+}
+
+.header nav .i-signin .icon .fa-times {
+    font-size: 20px;
+    cursor: pointer;
+    transition: .5s;
+    padding: 10px;
+    color: white;
+    visibility: hidden;
+    opacity: 0;
+}
+
+.header nav .i-signin button {
+    margin: 10px 5px;
+    padding: 5px 12px;
+    border: none;
+    outline: none;
+    background-color: red;
+    color: white;
+    border-radius: 3px;
+    cursor: pointer;
+    transition: .5s;
+    display: inline;
+}
+
+.header nav .i-signin button:hover {
+    background-color: white;
+    color: red;
+}
+.header nav .i-signin button a{
+    font-weight: bold;
+    color: white;
+}
+.header nav .icon-screen {
+    display: flex;
+    margin: 15px 5px;
+}
+
+.header nav .icon-screen i {
+    font-size: 20px;
+    color: white;
+    cursor: pointer;
+    display: none;
+}
+
+@media (max-width:991px) {
+    .header nav .icon-screen .fa-bars {
+        display: block;
+    }
+    .header nav {
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        justify-content: space-between;
+        position: relative;
+        top: 10px;
+        padding: 0px 10px;
+    }
+    .header nav .links {
+        display: none;
+    }
+
+    .header nav .i-signin {
+        display: none;
+    }
+}
+
+.header .search-bar {
+    transition: .3s;
+    visibility: hidden;
+    opacity: 0;
+    position: relative;
+    top: -20px;
+    left: 50%;
+    width: 300px;
+}
+.header .search-bar i{
+    position: relative;
+    color: red;
+    margin: 5px;
+    padding: 5px;
+    top: 34px;
+    left: 16em;
+    cursor: pointer;
+    border-left: 1px solid red;
+}
+.header .search-bar input {
+    width: 100%;
+    padding: 5px 10px;
+    padding-right: 40px;
+    border: 2px solid red;
+    outline: none;
+    background-color: rgba(243, 236, 236, 0.986);
+    font-weight: bold;
+    border-radius: 20px;
+    direction: rtl;
+}
+/*end header*/
+
+.movie-page{
+width: 100%;
+position: relative;
+top: 100px;
+}
+.movie-page .container{
+width: 100%;
+padding: 10px;
+display: flex;
+flex-direction: column;
+justify-content: center;
+align-items: center;
+}
+.movie-page .container .data{
+width: 740px;
+display: flex;
+flex-direction: column;
+justify-content: center;
+}
+/* .movie-page .container .image{
+    
+} */
+/* .movie-page .container .data .image img{
+height: 650px;
+} */
+.movie-page .container .data div{
+padding: 20px;
+border: 2px solid red;
+}
+.movie-page .container .data div span{
+color: red;
+padding: 0px 10px;
+}
+.movie-page .container .data div i{
+    color: yellow;
+
+}
+.movie-page .container .data div .name{
+    color: white;
+}
+.movie-page .container .data div button{
+    padding: 8px 12px;
+    background-color: #060606;
+    border:1px solid  red;
+    color: red;
+    border-radius: 10px;
+    cursor: pointer;
+    transition: .3s;
+}
+.movie-page .container .data div button:hover{
+background-color: red;
+color: white;
+}
+.movie-page .container .data div button i{
+    color: red;
+}
+.movie-page .container .data div button:hover i{
+    color: white;
+}

@@ -1,0 +1,571 @@
+@import url('https://fonts.googleapis.com/css?family=Poppins:400,500,600,700&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Roboto:wght@100;300&display=swap');
+
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    scroll-behavior: smooth;
+    list-style-type: none;
+    text-decoration: none;
+    /* font-family: 'Poppins', sans-serif; */
+    font-family: 'Roboto', sans-serif;
+    transition: .3s;
+}
+
+body {
+    background-color: #060606;
+}
+
+#scroll-top {
+    display: block;
+    visibility: hidden;
+    z-index: 8;
+    opacity: 0;
+    transition: visibility 0s, opacity 0.5s ease-in;
+    position: fixed;
+    bottom: 20px;
+    right: 20px;
+    background: rgba(167, 10, 10, 0.4);
+    border-radius: 20%;
+}
+
+.top-button {
+    text-decoration: none;
+    cursor: pointer;
+    padding: 20px;
+    color: #fafafa;
+}
+
+#scroll-top i {
+    color: #fafafa;
+    padding: 10px;
+    font-size: 24px;
+}
+
+/*start header*/
+.header {
+    width: 100%;
+    height: 70px;
+    position: fixed;
+    z-index: 6;
+    top: 0;
+    transition: .3s;
+}
+
+.back-header {
+    background-color: hsla(60, 3%, 7%, 0.75);
+}
+
+.header nav {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    justify-content: space-around;
+    position: relative;
+    top: 10px;
+}
+
+.header nav .logo {
+    margin: 5px;
+}
+
+.header nav .logo span {
+    font-size: 18px;
+    font-weight: bold;
+    font-style: italic;
+    color: white;
+}
+
+.header nav .links {
+    position: relative;
+}
+
+.header nav .links ul {
+    display: flex;
+    justify-content: space-between;
+}
+
+.header nav .links ul li {
+    margin: 5px;
+}
+
+.header nav .links ul li a {
+    padding: 20px;
+    color: white;
+    position: relative;
+    transition: .3s;
+}
+
+.header nav .links ul li a:hover {
+    color: red;
+}
+
+.header nav .links ul li a::before {
+    content: '';
+    position: absolute;
+    background-color: red;
+    width: 0px;
+    height: 1px;
+    top: 45px;
+    transition: .3s;
+}
+
+.header nav .links ul li a:hover::before {
+    width: 50px;
+}
+
+.header nav .i-signin {
+    width: 20%;
+    display: flex;
+    justify-content: space-between;
+}
+
+.header nav .i-signin .icon {
+    margin: 5px;
+}
+
+.header nav .i-signin .icon .fa-search {
+    font-size: 20px;
+    cursor: pointer;
+    transition: .5s;
+    padding: 10px;
+    color: white;
+}
+
+.header nav .i-signin .icon .fa-times {
+    font-size: 20px;
+    cursor: pointer;
+    transition: .5s;
+    padding: 10px;
+    color: white;
+    visibility: hidden;
+    opacity: 0;
+}
+
+.header nav .i-signin button {
+    margin: 10px 5px;
+    padding: 5px 12px;
+    border: none;
+    outline: none;
+    background-color: red;
+    color: white;
+    border-radius: 3px;
+    cursor: pointer;
+    transition: .5s;
+    display: inline;
+}
+
+.header nav .i-signin button:hover {
+    background-color: white;
+    color: red;
+}
+.header nav .i-signin button a{
+    font-weight: bold;
+    color: white;
+}
+.header nav .icon-screen {
+    display: flex;
+    margin: 15px 5px;
+}
+
+.header nav .icon-screen i {
+    font-size: 20px;
+    color: white;
+    cursor: pointer;
+    display: none;
+}
+
+@media (max-width:991px) {
+    .header nav .icon-screen .fa-bars {
+        display: block;
+    }
+    .header nav {
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        justify-content: space-between;
+        position: relative;
+        top: 10px;
+        padding: 0px 10px;
+    }
+    .header nav .links {
+        display: none;
+    }
+
+    .header nav .i-signin {
+        display: none;
+    }
+}
+
+.header .search-bar {
+    transition: .3s;
+    visibility: hidden;
+    opacity: 0;
+    position: relative;
+    top: 20px;
+    left: 50%;
+    width: 300px;
+}
+.header .search-bar i{
+    position: relative;
+    color: red;
+    margin: 5px;
+    padding: 5px;
+    top: 34px;
+    left: 16em;
+    cursor: pointer;
+    border-left: 1px solid red;
+}
+.header .search-bar input {
+    width: 100%;
+    padding: 5px 10px;
+    padding-right: 40px;
+    border: 2px solid red;
+    outline: none;
+    background-color: rgba(243, 236, 236, 0.986);
+    font-weight: bold;
+    border-radius: 20px;
+    direction: rtl;
+}
+/*start movies*/
+
+.movies {
+    margin-top: 60px;
+    width: 100%;
+}
+
+.movies .links-column {
+    position: fixed;
+    z-index: 8;
+    width: 100%;
+    visibility: hidden;
+    opacity: 0;
+    background-color: hsla(60, 3%, 7%, 0.75);
+    padding: 0px;
+    top: 70px;
+    direction: rtl;
+    transition: .3s;
+}
+
+.movies .links-column ul {
+    display: flex;
+    flex-direction: column;
+}
+.movies .links-column ul .search{
+    border-bottom: 1px solid red;
+    padding: 0px;
+}
+.movies .links-column ul input{
+    width: 100%;
+    padding: 5px 10px;
+    padding-right: 40px;
+    border: 2px solid red;
+    outline: none;
+    background-color: rgba(243, 236, 236, 0.986);
+    font-weight: bold;
+    direction: rtl;
+    cursor: pointer;
+}
+.movies .links-column ul li i{
+    color: red;
+    margin: 5px;
+    padding: 5px;
+    position: relative;
+    top: 34px;
+    cursor: pointer;
+    border-left: 1px solid red;
+}
+.movies .links-column ul li {
+    border-bottom: 1px solid red;
+    padding: 10px;
+}
+
+.movies .links-column li a {
+    padding: 20px;
+    color: white;
+    position: relative;
+    transition: .3s;
+}
+
+.movies .links-column li a:hover {
+    color: red;
+}
+
+.movies .title {
+    padding: 20px 0px;
+    margin: 20px;
+    border-bottom: 1px solid red;
+    width: 80%;
+}
+
+.movies .title span {
+    font-size: 22px;
+    font-weight: bold;
+    color: white;
+}
+
+.movies .list {
+    width: 75%;
+    display: flex;
+    justify-content: space-between;
+    margin: 0px 20px;
+}
+
+@media (max-width:490px) {
+    .movies .list {
+        display: flex;
+        justify-content: space-between;
+        flex-wrap: wrap;
+    }
+}
+
+.movies .list a {
+    padding: 10px;
+    color: white;
+    transition: .3s;
+    margin: 5px 0px;
+}
+
+.movies .list .active {
+    background-color: red;
+    border-radius: 5px;
+}
+
+.movies .list a:hover {
+    background-color: red;
+    border-radius: 5px;
+}
+
+.movies .container {
+    width: 100%;
+    padding: 20px;
+    margin-top: 10px;
+}
+
+.movies .container .cards {
+    display: flex;
+    justify-content: space-between;
+    flex-wrap: wrap;
+}
+
+@media (max-width:1018px) {
+    .movies .container .cards {
+        display: flex;
+        justify-content: flex-start;
+        flex-wrap: wrap;
+    }
+}
+
+@media (max-width:767px) {
+    .movies .container .cards {
+        display: flex;
+        justify-content: center;
+        flex-wrap: wrap;
+    }
+}
+
+.movies .container .cards .card {
+    width: 220px;
+    margin: 10px 10px;
+    transition: .3s;
+    cursor: pointer;
+    box-shadow: 0px 0px 8px 1px darkred;
+    background-color: #060606;
+}
+
+.movies .container .cards .card:hover {
+    transform: scale(1.07);
+}
+
+.movies .container .cards .card .image {
+    width: 100%;
+}
+
+.movies .container .cards .card .image img {
+    width: 100%;
+    height: 310px;
+}
+
+.movies .container .cards .card .data {
+    /* background-color: hsla(60, 3%, 7%, 0.75); */
+    position: relative;
+    /* top: -72px; */
+}
+
+.movies .container .cards .card .name {
+    margin: 5px;
+    padding: 5px;
+}
+
+.movies .container .cards .card .name span {
+    color: white;
+}
+
+.movies .container .cards .card .rate {
+    margin: 5px;
+    padding: 5px;
+}
+
+.movies .container .cards .card .rate span {
+    color: white;
+    padding: 0px 5px;
+    font-weight: bold;
+}
+
+.movies .container .cards .card .rate i {
+    font-size: 18px;
+    color: yellow;
+    padding: 0px 5px;
+}
+
+.movies .container .cards .card .information {
+    padding: 5px;
+    margin: 5px;
+}
+
+.movies .container .cards .card .information span {
+    color: #aaa;
+    padding: 0px 5px;
+    margin: 0px 2px;
+    border-left: .5px solid #aaa;
+    font-size: 14px;
+}
+
+.movies .container .cards .card .information .first {
+    border: none;
+}
+
+.movies .container .cards .card .information .last {
+    border: none;
+}
+.movies .footer{
+    display: flex;
+    justify-content: flex-end;
+    padding: 20px;
+}
+.movies .footer a{
+    color: red;
+    margin-right: 10px;
+}
+
+/*end movies*/
+/*start footer*/
+.footer {
+    width: 100%;
+    padding: 20px;
+}
+
+@media (max-width:767px) {
+    .footer footer {
+        display: flex;
+        flex-direction: column;
+        justify-content: center;
+    }
+}
+
+.footer footer {
+    display: flex;
+    justify-content: space-around;
+    align-items: center;
+    width: 90%;
+}
+
+.footer footer .div1 {
+    padding: 20px;
+}
+
+.footer footer .div1 .logo {
+    margin: 20px;
+}
+
+.footer footer .div1 .logo span {
+    font-size: 18px;
+    font-weight: bold;
+    font-style: italic;
+    color: white;
+}
+
+.footer footer .div2 {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+}
+
+/* @media (max-width:767px){
+
+} */
+.footer footer .div2 .email-phone {
+    position: relative;
+}
+
+.footer footer .div2 .email-phone p {
+    color: white;
+    margin: 10px 0px;
+}
+
+.footer footer .div2 span {
+    color: white;
+    margin: 10px 0px;
+}
+
+.footer footer .div2 p {
+    color: white;
+}
+
+.footer footer .div2 .links {
+    position: relative;
+    margin: 20px;
+}
+
+.footer footer .div2 .links ul {
+    display: flex;
+    justify-content: space-between;
+}
+
+.footer footer .div2 .links ul li {
+    margin: 5px;
+}
+
+.footer footer .div2 .links ul a {
+    padding: 10px;
+    color: white;
+    transition: .5s;
+}
+
+.footer footer .div2 .links ul a:hover {
+    color: red;
+}
+.footer footer .div3{
+    display: flex;
+    justify-content: center;
+    flex-direction: column;
+    align-items: center;
+}
+.footer footer .div3 .icons {
+    margin: 20px;
+}
+
+.footer footer .div3 .icons i {
+    font-size: 20px;
+    cursor: pointer;
+    transition: .5s;
+    padding: 10px;
+    color: white;
+    transition: .3s;
+}
+
+.footer footer .div3 .icons i:hover {
+    color: red;
+}
+
+.footer footer .div3 .p {
+    position: relative;
+}
+
+.footer footer .div3 p {
+    color: white;
+}
+
+/*end footer*/
